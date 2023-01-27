@@ -1,0 +1,41 @@
+﻿@model CustomerViewModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create Customer</h1>
+
+<form asp-controller="Customer" asp-action="Create" method="post">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="mb-2">
+                <label asp-for="CustomerName" class="form-label"></label>
+                <input type="text" asp-for="CustomerName" class="form-control" />
+                <span asp-validation-for="CustomerName"></span>
+            </div>
+            <div class="mb-2">
+                <label asp-for="PhoneNo" class="form-label"></label>
+                <input type="text" asp-for="PhoneNo" class="form-control" />
+                <span asp-validation-for="PhoneNo"></span>
+            </div>
+            <div class="mb-2">
+                <label asp-for="EmailId" class="form-label"></label>
+                <input type="text" asp-for="EmailId" class="form-control" />
+                <span asp-validation-for="EmailId"></span>
+            </div>
+
+            <div class="mb-2">
+                <label asp-for="Address" class="form-label"></label>
+                <input type="text" asp-for="Address" class="form-control" />
+                <span asp-validation-for="Address"></span>
+            </div>
+            <div class="mt-2 d-grid">
+                <input type="submit" class="btn btn-primary" value="Add New" />
+                
+            </div>
+        </div>
+    </div>
+</form>
+
+
+

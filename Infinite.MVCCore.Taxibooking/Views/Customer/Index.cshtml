@@ -1,0 +1,44 @@
+﻿@model IEnumerable<CustomerViewModel>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<div class="row">
+    <div class="col-md-5">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th> CustomerId</th>
+                    <th>CustomerName</th>
+                    <th>PhoneNo</th>
+                    <th>EmailId</th>
+                    <th>Address</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.CustomerId</td>
+
+                        <td>@item.CustomerName</td>
+                        <td>@item.PhoneNo</td>
+                        <td>@item.EmailId</td>
+                        <td>@item.Address</td>
+                        <td>
+                            <a asp-controller="Customer" asp-action="Create" asp-route-id="@item.CustomerId">Create</a>
+                            <a asp-controller="Customer" asp-action="Edit" asp-route-id="@item.CustomerId">Edit</a>
+                            <a asp-controller="Customer" asp-action="Delete" asp-route-id="@item.CustomerId">Delete</a>
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
